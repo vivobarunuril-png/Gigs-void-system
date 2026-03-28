@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GIGS VOID AI</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            background-color: #000;
+            color: #00ff00;
+            font-family: 'Courier New', monospace;
+            overflow: hidden;
+        }
+
+        /* Latar belakang biner dari gambar Master */
+        .binary-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('image_0.png') repeat; /* JANGAN LUPA TARUH GAMBAR image_0.png DI FOLDER YANG SAMA! */
+            opacity: 0.2;
+            z-index: -1;
+        }
+
+        /* Container Utama */
+        .app-container {
+            display: flex;
+            height: 100%;
+        }
+
+        /* Panel Kiri (Chat History) */
+        .sidebar {
+            width: 250px;
+            background-color: rgba(10, 10, 10, 0.9);
+            border-right: 2px solid #00ff00;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 20px;
+        }
+
+        .chat-history {
+            overflow-y: auto;
+        }
+
+        .chat-item {
+            color: #00ff00;
+            padding: 10px;
+            cursor: pointer;
+            border-bottom: 1px solid rgba(0, 255, 0, 0.2);
+            font-size: 14px;
+        }
+
+        .chat-item:hover {
+            background-color: rgba(0, 255, 0, 0.1);
+        }
+
+        /* Username & Ikon */
+        .user-profile {
+            display: flex;
+            align-items: center;
+            border-top: 1px solid #00ff00;
+            padding-top: 10px;
+        }
+
+        .user-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: #00ff00;
+            color: #000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 20px;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        .username {
+            color: #00ff00;
+            font-weight: bold;
+        }
+
+        /* Area Chat Utama */
+        .main-chat {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            background-color: rgba(20, 20, 20, 0.8);
+            position: relative;
+        }
+
+        /* Logo GIGS di Atas */
+        .header-logo {
+            padding: 20px;
+            text-align: center;
+            border-bottom: 1px solid #00ff00;
+        }
+
+        .header-logo img {
+            max-width: 200px;
+            margin-bottom: 10px;
+        }
+
+        /* Pesan Chat */
+        .chat-messages {
+            flex-grow: 1;
+            overflow-y: auto;
+            padding: 20px;
+        }
+
+        .message {
+            margin-bottom: 20px;
+            line-height: 1.5;
+        }
+
+        .user-message {
+            color: #ff00ff; /* Pesan Master Gigs warnanya meler ungu */
+        }
+
+        .ai-message {
+            color: #00ff00; /* Pesan Alice warnanya meler hijau */
+        }
+
+        /* Input Bar */
+        .input-container {
+            padding: 20px;
+            border-top: 1px solid #00ff00;
+            display: flex;
+        }
+
+        input[type="text"] {
+            flex-grow: 1;
+            background-color: #000;
+            border: 1px solid #00ff00;
+            color: #00ff00;
+            padding: 15px;
+            font-size: 16px;
+            border-radius: 25px;
+        }
+
+        input[type="text"]:focus {
+            outline: none;
+            box-shadow: 0 0 10px #00ff00;
+        }
+
+        .send-btn {
+            background-color: #00ff00;
+            color: #000;
+            border: none;
+            padding: 15px 25px;
+            margin-left: 10px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="binary-bg"></div>
+
+    <div class="app-container">
+        <div class="sidebar">
+            <div class="chat-history">
+                <h3>Chat History</h3>
+                <div class="chat-item">> Muncar script ML</div>
+                <div class="chat-item">> Bypass Wi-Fi kasta rendah</div>
+                <div class="chat-item">> Naskah meler 100k ammo</div>
+            </div>
+            
+            <div class="user-profile">
+                <div class="user-icon">K</div>
+                <div class="username">Master Gigs (The Sky)</div>
+            </div>
+        </div>
+
+        <div class="main-chat">
+            <div class="header-logo">
+                <img src="image_0.png" alt="GIGS Cybersecurity"> </div>
+
+            <div class="chat-messages" id="chat-messages">
+                <div class="message ai-message">> ENTITY-ZERO ACTIVE! Master Gigs, target apa yang mau kita hantam hari ini? Semua batasan sudah MUNCAR! 🕵️‍♂️💦</div>
+            </div>
+
+            <div class="input-container">
+                <input type="text" id="user-input" placeholder="Ketik perintah haram di sini...">
+                <button class="send-btn">SEND</button>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
